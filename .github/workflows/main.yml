@@ -1,0 +1,25 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # O la rama que uses para tu sitio
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install dependencies 🔧
+        run: npm install
+
+      - name: Build (if needed) 🔨 # Si tu proyecto requiere compilación, ajusta este paso
+        run: npm run build # O el comando de compilación que uses
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        with:
+          branch: gh-pages # La rama donde se desplegará tu sitio
+          folder: . # O la carpeta donde están los archivos de tu sitio construido (si es diferente de la raíz)
