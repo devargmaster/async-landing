@@ -14,6 +14,7 @@ async function fetchData(urlApi)
 (async() => {
  try {
     const videos = await fetchData(API);
+    console.log(videos);
     let view  =  `
     ${videos.items.map(video => `
          <div class="group relative">
