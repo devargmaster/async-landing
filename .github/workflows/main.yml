@@ -15,9 +15,6 @@ jobs:
       - name: Install dependencies 🔧
         run: npm install
 
-      - name: Build (if needed) 🔨 # Si tu proyecto requiere compilación, ajusta este paso
-        run: npm run build # O el comando de compilación que uses
-
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
